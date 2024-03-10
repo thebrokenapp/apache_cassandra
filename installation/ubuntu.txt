@@ -1,1 +1,4 @@
-hi
+
+sudo apt-get update
+sudo apt install wget make gcc tcl build-essential
+sudo apt install default-jdk
