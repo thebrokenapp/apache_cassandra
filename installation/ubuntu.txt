@@ -1,4 +1,4 @@
 
 sudo apt-get update
 sudo apt install wget make gcc tcl build-essential
-sudo apt install default-jdk
+JAVA 11 Only - sudo apt-get install openjdk-11-jdk
