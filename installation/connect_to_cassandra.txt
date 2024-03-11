@@ -1,0 +1,2 @@
+* Connect to an IP and Port on which Cassandra is running
+bin/cqlsh localhost 9042
