@@ -1,0 +1,22 @@
+Connect to an IP and Port on which Cassandra is running
+> bin/cqlsh localhost 9042
+____________________________________________________________________
+List all the commands for which Docmentation is available
+> HELP
+____________________________________________________________________
+See Documentation of a command
+> HELP <command>
+> HELP DESC
+____________________________________________________________________
+To learn more about the cluster you’re working in
+> DESCRIBE CLUSTER;
+____________________________________________________________________
+To see available KEYSPACES
+> DESCRIBE KEYSPACES;
+Initially this list will consist of several system keyspaces.
+Once you have created your own keyspaces, they will be shown as well.
+The system keyspaces are managed internally by Cassandra, and aren’t for you to put data into
+Keyspaces are like Databases
+____________________________________________________________________
+Check Version
+> SHOW VERSION;
