@@ -1,0 +1,33 @@
+A Cassandra KEYSPACE is sort of like a relational database. It defines one or more tables.
+When you start cqlsh without specifying a keyspace, the prompt will look like this:
+cqlsh>
+with no keyspace specified
+_____________________________________________________________________________
+Creating a KEYSPACE, needs some reqired options, lets go through them:
+Type the following and then press the Tab key:
+cqlsh> CREATE KEYSPACE my_keyspace WITH
+When you press the Tab key, cqlsh begins completing the syntax of your command:
+cqlsh> CREATE KEYSPACE my_keyspace WITH replication = {'class': '
+This is informing you that in order to specify a keyspace, you also need to specify a replication strategy.
+Tab again to see what options you have:
+cqlsh> CREATE KEYSPACE my_keyspace WITH replication = {'class': '
+NetworkTopologyStrategy   SimpleStrategy
+For now, choose the SimpleStrategy by typing the name, and indicate you’re done with a closing quote and Tab again:
+cqlsh> CREATE KEYSPACE my_keyspace WITH replication = {'class': 'SimpleStrategy', 'replication_factor':
+Specify a value of '1' and a space and Tab again
+You see that cqlsh has now added a closing bracket, indicating you’ve completed all of the required options. Complete the command with a semicolon and return, and your keyspace will be created.
+_____________________________________________________________________________
+Describe Your KEYSPACE
+cqlsh> DESCRIBE KEYSPACE sales;
+_____________________________________________________________________________
+After you have created your own keyspace, you can switch to it in the shell by typing:
+cqlsh> USE sales;
+cqlsh:sales>
+Notice that the prompt has changed to indicate that we’re using the keyspace.
+_____________________________________________________________________________
+Now that you have a keyspace, you can create a table in your keyspace
+cqlsh:sales> CREATE TABLE user ( first_name text , last_name text, title text, PRIMARY KEY (last_name, first_name)) ;
+You’ll learn more about primary keys and the significance of your choice of primary key later, but for now let’s think of that combination as identifying unique rows in your table.
+_____________________________________________________________________________
+Get description of a the table you just created
+cqlsh:sales> DESCRIBE TABLE user;
