@@ -1,0 +1,19 @@
+Now that you have a keyspace and a table, you can write some data to the database and read it back out again.
+
+Write data using INSERT Command:
+cqlsh:sales> INSERT INTO user (first_name, last_name, title) VALUES ('Bill', 'Nguyen', 'Mr.');
+________________________________________________________________________________________________
+Read data using SELECT command:
+cqlsh:sales> SELECT * FROM user WHERE first_name='Bill' AND last_name='Nguyen';
+________________________________________________________________________________________________
+Delete a Column Value:
+cqlsh:sales> DELETE title FROM USER WHERE first_name='Bill' AND last_name='Nguyen';
+________________________________________________________________________________________________
+Delete complete row:
+cqlsh:sales> DELETE FROM USER WHERE first_name='Bill' AND last_name='Nguyen';
+________________________________________________________________________________________________
+Delete all rows of the table
+cqlsh:sales> TRUNCATE user;
+________________________________________________________________________________________________
+Delete table
+cqlsh:sales> DROP TABLE user;
